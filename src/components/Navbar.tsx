@@ -1,19 +1,23 @@
 import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { Menu, X } from "lucide-react";
-
-const links = [
-  { href: "#inicio", label: "Inicio" },
-  { href: "#hongos", label: "Hongos" },
-  { href: "#proceso", label: "Proceso" },
-  { href: "#ciencia", label: "Ciencia" },
-  { href: "#precio", label: "Precio" },
-  { href: "#contacto", label: "Contacto" },
-];
+import { LanguageToggle } from "./LanguageToggle";
+import { useI18n } from "@/lib/i18n";
 
 export function Navbar() {
+  const { t } = useI18n();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: "#inicio", label: t.nav.home },
+    { href: "#hongos", label: t.nav.mushrooms },
+    { href: "#proceso", label: t.nav.process },
+    { href: "#ciencia", label: t.nav.science },
+    { href: "#producto", label: t.nav.product },
+    { href: "#precio", label: t.nav.price },
+    { href: "#contacto", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -25,36 +29,34 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-forest/90 backdrop-blur-md shadow-soft"
-          : "bg-transparent"
+        scrolled ? "bg-forest/90 backdrop-blur-md shadow-soft" : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-5 lg:px-10 h-16 flex items-center justify-between text-cream">
-        <a href="#inicio" aria-label="VitaPet inicio">
+        <a href="#inicio" aria-label="VitaPet">
           <Logo />
         </a>
-        <ul className="hidden md:flex items-center gap-7 text-sm">
+        <ul className="hidden lg:flex items-center gap-7 text-sm">
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="text-cream/80 hover:text-gold transition-colors"
-              >
+              <a href={l.href} className="text-cream/80 hover:text-gold transition-colors">
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-        <a
-          href="#precio"
-          className="hidden md:inline-flex items-center rounded-full bg-gradient-leaf px-4 py-2 text-sm font-medium text-cream shadow-soft hover:opacity-95"
-        >
-          Comprar
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <LanguageToggle variant="dark" />
+          <a
+            href="#precio"
+            className="inline-flex items-center rounded-full bg-gradient-leaf px-4 py-2 text-sm font-medium text-cream shadow-soft hover:opacity-95"
+          >
+            {t.nav.buy}
+          </a>
+        </div>
         <button
           className="md:hidden p-2 rounded-md hover:bg-cream/10"
-          aria-label="Abrir menú"
+          aria-label="Menu"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -65,22 +67,19 @@ export function Navbar() {
           <ul className="px-5 py-4 space-y-3 text-cream">
             {links.map((l) => (
               <li key={l.href}>
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="block py-1"
-                >
+                <a href={l.href} onClick={() => setOpen(false)} className="block py-1">
                   {l.label}
                 </a>
               </li>
             ))}
-            <li>
+            <li className="pt-2 flex items-center justify-between gap-3">
+              <LanguageToggle variant="dark" />
               <a
                 href="#precio"
                 onClick={() => setOpen(false)}
-                className="inline-flex w-full justify-center rounded-full bg-gradient-leaf px-4 py-2 font-medium"
+                className="inline-flex justify-center rounded-full bg-gradient-leaf px-4 py-2 font-medium"
               >
-                Comprar ahora
+                {t.nav.buyNow}
               </a>
             </li>
           </ul>
