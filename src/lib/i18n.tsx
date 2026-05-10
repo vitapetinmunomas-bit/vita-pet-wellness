@@ -9,16 +9,6 @@ import {
 
 export type Lang = "es" | "en";
 
-type Dict = typeof translations.es;
-type Path<T, P extends string = ""> = {
-  [K in keyof T & string]: T[K] extends string
-    ? `${P}${K}`
-    : T[K] extends object
-      ? Path<T[K], `${P}${K}.`>
-      : never;
-}[keyof T & string];
-export type TKey = Path<Dict>;
-
 export const translations = {
   es: {
     nav: {
@@ -298,7 +288,9 @@ export const translations = {
       langLabel: "Language",
     },
   },
-} as const;
+};
+
+export type Dict = (typeof translations)["es"];
 
 type Ctx = {
   lang: Lang;
