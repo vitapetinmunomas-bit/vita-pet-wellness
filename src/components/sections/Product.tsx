@@ -35,8 +35,8 @@ export function Product() {
           <dl className="mt-8 grid grid-cols-2 gap-4 text-sm">
             {[
               ["Contenido neto", "60 g"],
-              ["Formato", "Polvo liofilizado"],
-              ["Origen", "Chile 🇨🇱"],
+              ["Presentación", "Doypack resellable"],
+              ["Origen", "Chile 🇨🇱 nativo"],
               ["Uso", "Mezclar con la comida"],
             ].map(([k, v]) => (
               <div
