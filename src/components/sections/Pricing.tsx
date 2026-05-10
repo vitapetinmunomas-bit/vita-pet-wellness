@@ -16,11 +16,10 @@ export function Pricing() {
             <Logo />
           </div>
           <h2 className="font-display text-4xl mt-6 text-forest">
-            VitaPet Inmuno+ · 60 g
+            VitaPet Inmuno+ · Doypack 60 g
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Suplemento inmunológico premium · polvo liofilizado de hongos
-            medicinales.
+            Polvo liofilizado de 6 hongos medicinales nativos de Chile.
           </p>
 
           <div className="mt-8 inline-flex items-baseline gap-2">

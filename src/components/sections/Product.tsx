@@ -1,4 +1,4 @@
-import jar from "@/assets/vitapet-jar.jpg";
+import doypack from "@/assets/vitapet-doypack.jpg";
 import { MAILTO_BUY } from "@/lib/links";
 import { ShoppingBag } from "lucide-react";
 
@@ -8,15 +8,15 @@ export function Product() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
         <div className="reveal relative">
           <img
-            src={jar}
-            alt="Frasco VitaPet Inmuno+ sobre madera, rodeado de hongos medicinales"
+            src={doypack}
+            alt="Doypack VitaPet Inmuno+ 60g de hongos medicinales liofilizados"
             loading="lazy"
             width={1024}
-            height={1024}
-            className="w-full rounded-3xl shadow-soft object-cover aspect-square"
+            height={1280}
+            className="w-full rounded-3xl shadow-soft object-cover aspect-[4/5]"
           />
           <span className="absolute top-5 left-5 rounded-full bg-forest text-cream text-xs px-3 py-1.5 tracking-wider uppercase">
-            Edición premium
+            Doypack 60 g
           </span>
         </div>
         <div className="reveal">
@@ -27,15 +27,16 @@ export function Product() {
             VitaPet Inmuno+
           </h2>
           <p className="mt-4 text-muted-foreground max-w-lg">
-            Polvo liofilizado de hongos medicinales formulado para perros y
-            gatos. Fácil de mezclar con su alimento diario.
+            Polvo liofilizado de seis hongos medicinales nativos de Chile,
+            formulado para perros y gatos. Presentación en doypack resellable
+            de 60 g, fácil de mezclar con su alimento diario.
           </p>
 
           <dl className="mt-8 grid grid-cols-2 gap-4 text-sm">
             {[
               ["Contenido neto", "60 g"],
-              ["Formato", "Polvo liofilizado"],
-              ["Origen", "Chile 🇨🇱"],
+              ["Presentación", "Doypack resellable"],
+              ["Origen", "Chile 🇨🇱 nativo"],
               ["Uso", "Mezclar con la comida"],
             ].map(([k, v]) => (
               <div

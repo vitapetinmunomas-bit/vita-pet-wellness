@@ -31,8 +31,8 @@ export function Hero() {
           <span className="text-gold italic">acompaña siempre</span>
         </h1>
         <p className="mt-6 text-base sm:text-lg text-cream/85 max-w-2xl mx-auto">
-          Suplemento inmunológico de hongos medicinales para mascotas ·{" "}
-          <span className="text-cream">60 g en polvo liofilizado</span>
+          Suplemento de 6 hongos medicinales nativos de Chile ·{" "}
+          <span className="text-cream">Doypack 60 g · polvo liofilizado</span>
         </p>
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
