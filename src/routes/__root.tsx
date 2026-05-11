@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { LanguageProvider } from "@/lib/i18n";
 
 import appCss from "../styles.css?url";
 
@@ -79,14 +80,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Suplemento inmunológico de hongos medicinales liofilizados para perros y gatos.",
       },
       { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:title", content: "VitaPet · Suplemento Inmunológico para Mascotas · Chile" },
-      { name: "twitter:title", content: "VitaPet · Suplemento Inmunológico para Mascotas · Chile" },
-      { name: "description", content: "VitaPet: Natural Defense is a website for a premium pet immune supplement made from medicinal mushrooms." },
-      { property: "og:description", content: "VitaPet: Natural Defense is a website for a premium pet immune supplement made from medicinal mushrooms." },
-      { name: "twitter:description", content: "VitaPet: Natural Defense is a website for a premium pet immune supplement made from medicinal mushrooms." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3b62bd2a-f84a-4559-9687-23d561af536d/id-preview-de63c3d2--083a3033-b29e-4177-89d0-71463279f06e.lovable.app-1778381877873.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3b62bd2a-f84a-4559-9687-23d561af536d/id-preview-de63c3d2--083a3033-b29e-4177-89d0-71463279f06e.lovable.app-1778381877873.png" },
-      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -123,7 +116,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <LanguageProvider>
+        <Outlet />
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }
