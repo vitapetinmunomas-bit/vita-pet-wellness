@@ -26,13 +26,19 @@ bun run start
 
 ## Despliegue
 
-### Vercel (recomendado)
+### Vercel
 
 1. Conecta el repo de GitHub en <https://vercel.com/new>.
-2. Vercel detecta `vercel.json` automáticamente:
-   - Build: `bun run build`
-   - Output: `.output/public`
-3. No se necesitan variables de entorno para la versión actual (compra por mailto).
+2. En **Build & Development Settings** deja los overrides en OFF para que Vercel use `vercel.json`, o configúralos manualmente así:
+   - Framework Preset: **Other** (no elijas Vite ni Next).
+   - Build Command: `bun run build` (o `npm run build`).
+   - Output Directory: `dist`.
+   - Install Command: `bun install` (o `npm install`).
+3. No pongas nunca `Output Directory = public` — no existe esa carpeta.
+4. No se necesitan variables de entorno para la versión actual (compra por mailto).
+
+> El build genera `dist/` con los assets estáticos y un `_worker.js` orientado a Cloudflare que Vercel ignora sin problemas. Si en el futuro activas server functions, habrá que cambiar de adapter o desplegar en Cloudflare Workers.
+
 
 ### Cloudflare Workers
 
