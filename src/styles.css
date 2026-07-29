@@ -5,8 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-alt: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -39,51 +40,56 @@
   --color-leaf: var(--leaf);
   --color-cream: var(--cream);
   --color-gold: var(--gold);
+  --color-cacao: var(--cacao);
+  --color-stone: var(--stone);
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.5rem;
 
-  /* Brand palette */
-  --forest: oklch(0.255 0.025 145);          /* #1C2B1F */
-  --forest-foreground: oklch(0.95 0.03 90);  /* cream on forest */
-  --primary: oklch(0.62 0.17 145);           /* #4CAF50 medium green */
-  --primary-foreground: oklch(0.98 0.01 90);
-  --leaf: oklch(0.78 0.17 130);              /* #8BC34A */
-  --cream: oklch(0.95 0.025 90);             /* #F2EFE6 */
-  --gold: oklch(0.74 0.13 85);               /* #D4AF37 */
+  /* Brand palette — Nour · VitaPet */
+  --forest: oklch(0.28 0.005 60);            /* #2A2A2A carbón */
+  --forest-foreground: oklch(0.97 0.008 85);
+  --cacao: oklch(0.33 0.055 45);             /* #4A2C1F marrón cacao */
+  --gold: oklch(0.72 0.09 82);               /* #C9A04B dorado */
+  --stone: oklch(0.62 0.006 70);             /* #8E8A85 gris cálido */
+  --primary: oklch(0.62 0.13 121);           /* #809726 verde vitapet */
+  --primary-foreground: oklch(0.98 0.008 85);
+  --leaf: oklch(0.72 0.13 121);
+  --cream: oklch(0.97 0.008 85);             /* marfil */
 
-  --background: oklch(0.95 0.025 90);
-  --foreground: oklch(0.255 0.025 145);
+  --background: oklch(0.98 0.006 85);
+  --foreground: oklch(0.28 0.005 60);
 
-  --card: oklch(0.98 0.012 90);
-  --card-foreground: oklch(0.255 0.025 145);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.28 0.005 60);
 
-  --popover: oklch(0.98 0.012 90);
-  --popover-foreground: oklch(0.255 0.025 145);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.28 0.005 60);
 
-  --secondary: oklch(0.92 0.03 90);
-  --secondary-foreground: oklch(0.255 0.025 145);
+  --secondary: oklch(0.95 0.008 85);
+  --secondary-foreground: oklch(0.28 0.005 60);
 
-  --muted: oklch(0.92 0.025 90);
-  --muted-foreground: oklch(0.45 0.025 145);
+  --muted: oklch(0.95 0.006 85);
+  --muted-foreground: oklch(0.55 0.006 70);
 
-  --accent: oklch(0.78 0.17 130);
-  --accent-foreground: oklch(0.255 0.025 145);
+  --accent: oklch(0.72 0.09 82);
+  --accent-foreground: oklch(0.28 0.005 60);
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
 
-  --border: oklch(0.85 0.04 90);
-  --input: oklch(0.9 0.025 90);
-  --ring: oklch(0.62 0.17 145);
+  --border: oklch(0.9 0.012 85);
+  --input: oklch(0.93 0.008 85);
+  --ring: oklch(0.72 0.09 82);
 
   /* Gradients & shadows */
-  --gradient-forest: linear-gradient(135deg, oklch(0.22 0.025 145), oklch(0.32 0.04 145));
-  --gradient-leaf: linear-gradient(135deg, var(--primary), var(--leaf));
-  --gradient-hero-overlay: linear-gradient(180deg, oklch(0.18 0.02 145 / 0.55), oklch(0.18 0.02 145 / 0.85));
-  --shadow-gold: 0 10px 40px -12px oklch(0.74 0.13 85 / 0.45);
-  --shadow-soft: 0 8px 24px -8px oklch(0.2 0.02 145 / 0.18);
+  --gradient-forest: linear-gradient(135deg, oklch(0.24 0.005 60), oklch(0.33 0.055 45));
+  --gradient-leaf: linear-gradient(135deg, oklch(0.72 0.09 82), oklch(0.62 0.075 78));
+  --gradient-gold: linear-gradient(120deg, oklch(0.82 0.07 90), oklch(0.68 0.1 78), oklch(0.86 0.06 92));
+  --gradient-hero-overlay: linear-gradient(180deg, oklch(0.2 0.006 60 / 0.5), oklch(0.18 0.008 55 / 0.88));
+  --shadow-gold: 0 18px 60px -22px oklch(0.72 0.09 82 / 0.55);
+  --shadow-soft: 0 14px 40px -18px oklch(0.28 0.005 60 / 0.28);
 }
 
 @layer base {
@@ -97,30 +103,75 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-weight: 500;
+    letter-spacing: 0.005em;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    letter-spacing: -0.005em;
   }
 }
 
 @layer utilities {
   .bg-forest { background-color: var(--forest); }
   .text-forest { color: var(--forest); }
+  .bg-cacao { background-color: var(--cacao); }
+  .text-cacao { color: var(--cacao); }
   .text-cream { color: var(--cream); }
   .bg-cream { background-color: var(--cream); }
   .text-gold { color: var(--gold); }
+  .text-stone-warm { color: var(--stone); }
   .border-gold { border-color: var(--gold); }
   .bg-gradient-leaf { background-image: var(--gradient-leaf); }
   .bg-gradient-forest { background-image: var(--gradient-forest); }
+  .bg-gradient-gold { background-image: var(--gradient-gold); }
+  .text-gradient-gold {
+    background-image: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .font-alt { font-family: var(--font-alt); }
   .shadow-gold { box-shadow: var(--shadow-gold); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
+
+  /* Líneas de micelio decorativas */
+  .mycelium {
+    background-image:
+      radial-gradient(circle at 12% 20%, oklch(0.72 0.09 82 / 0.18) 0 1px, transparent 1px),
+      radial-gradient(circle at 78% 62%, oklch(0.72 0.09 82 / 0.16) 0 1px, transparent 1px),
+      linear-gradient(115deg, transparent 49.7%, oklch(0.72 0.09 82 / 0.16) 49.9%, transparent 50.2%),
+      linear-gradient(72deg, transparent 39.7%, oklch(0.72 0.09 82 / 0.1) 39.9%, transparent 40.2%),
+      linear-gradient(160deg, transparent 69.7%, oklch(0.72 0.09 82 / 0.09) 69.9%, transparent 70.2%);
+    background-size: 140px 140px, 180px 180px, 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  /* Partículas doradas */
+  .gold-particles {
+    background-image:
+      radial-gradient(circle at 15% 30%, oklch(0.82 0.09 88 / 0.5) 0 1.4px, transparent 2px),
+      radial-gradient(circle at 42% 72%, oklch(0.82 0.09 88 / 0.35) 0 1px, transparent 2px),
+      radial-gradient(circle at 68% 22%, oklch(0.82 0.09 88 / 0.45) 0 1.2px, transparent 2px),
+      radial-gradient(circle at 88% 58%, oklch(0.82 0.09 88 / 0.3) 0 1px, transparent 2px);
+    background-size: 260px 260px, 320px 320px, 380px 380px, 300px 300px;
+    animation: gold-drift 22s linear infinite;
+  }
+
+  @keyframes gold-drift {
+    from { background-position: 0 0, 0 0, 0 0, 0 0; }
+    to { background-position: 0 -260px, 0 -320px, 0 -380px, 0 -300px; }
+  }
+
+  .hairline-gold {
+    background-image: linear-gradient(90deg, transparent, var(--gold), transparent);
+    height: 1px;
+  }
 
   .reveal {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .reveal.is-visible {
     opacity: 1;
