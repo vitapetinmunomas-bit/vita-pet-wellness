@@ -1,4 +1,4 @@
-import logo from "@/assets/logo-nour.png";
+import star from "@/assets/logo-nour-star.png";
 
 export function Logo({
   className = "",
@@ -10,22 +10,21 @@ export function Logo({
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <img
-        src={logo}
+        src={star}
         alt="Nour"
-        width={512}
-        height={512}
-        className="w-9 h-9 object-contain object-center"
-        style={{ objectPosition: "center 32%" }}
+        width={705}
+        height={563}
+        className="w-8 h-8 object-contain"
       />
       <span className="leading-none">
         <span
-          className={`block font-display text-xl tracking-[0.32em] ${
+          className={`block font-display text-xl font-bold tracking-[0.34em] ${
             variant === "dark" ? "text-cream" : "text-forest"
           }`}
         >
           NOUR
         </span>
-        <span className="block font-alt text-[0.6rem] tracking-[0.3em] text-gold mt-1">
+        <span className="block font-alt text-[0.58rem] tracking-[0.32em] text-gold mt-1">
           VITAPET
         </span>
       </span>
