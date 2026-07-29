@@ -1,7 +1,7 @@
-import { Sprout, Snowflake, Wind, Layers, FlaskConical, Package } from "lucide-react";
+import { Sprout, Leaf, Droplets, Layers, FlaskConical, Package } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-const icons = [Sprout, Snowflake, Wind, Layers, FlaskConical, Package];
+const icons = [Sprout, Leaf, Droplets, Layers, FlaskConical, Package];
 
 export function Process() {
   const { t } = useI18n();

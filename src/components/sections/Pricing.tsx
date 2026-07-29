@@ -15,7 +15,7 @@ export function Pricing() {
             aria-hidden
           />
           <div className="flex justify-center">
-            <Logo />
+            <Logo variant="light" />
           </div>
           <h2 className="font-display text-4xl mt-6 text-forest">{t.pricing.title}</h2>
           <p className="mt-3 text-muted-foreground">{t.pricing.sub}</p>
