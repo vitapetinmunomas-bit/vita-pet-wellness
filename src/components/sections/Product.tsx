@@ -1,5 +1,5 @@
-import doypack from "@/assets/vitapet-doypack.jpg";
-import jar from "@/assets/vitapet-jar.jpg";
+import doypack from "@/assets/producto-doypack.png";
+import jar from "@/assets/producto-frasco.webp";
 import { MAILTO_BUY } from "@/lib/links";
 import { ShoppingBag, Check } from "lucide-react";
 import { useState } from "react";
@@ -9,7 +9,7 @@ type Format = "jar" | "doypack";
 
 export function Product() {
   const { t } = useI18n();
-  const [format, setFormat] = useState<Format>("doypack");
+  const [format, setFormat] = useState<Format>("jar");
   const img = format === "jar" ? jar : doypack;
   const altMap: Record<Format, string> = {
     jar: t.product.jar,

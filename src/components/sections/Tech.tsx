@@ -1,7 +1,7 @@
-import { Microscope, Snowflake, Atom, Home } from "lucide-react";
+import { Microscope, Sparkles, Atom, Home } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-const icons = [Microscope, Snowflake, Atom, Home];
+const icons = [Microscope, Sparkles, Atom, Home];
 
 export function Tech() {
   const { t } = useI18n();

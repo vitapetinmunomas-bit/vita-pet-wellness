@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
-import f1 from "@/assets/family-1.jpg";
-import f2 from "@/assets/family-2.jpg";
-import f3 from "@/assets/family-3.jpg";
+import f1 from "@/assets/lifestyle-mujer-perro.png";
+import f2 from "@/assets/uso-dosificacion.png";
+import f3 from "@/assets/uso-plato.png";
 import { useI18n } from "@/lib/i18n";
 
 const imgs = [f1, f2, f3];

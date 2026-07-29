@@ -2,19 +2,19 @@ import colaPavo from "@/assets/mushroom-cola-pavo.jpg";
 import reishi from "@/assets/mushroom-reishi.jpg";
 import shiitake from "@/assets/mushroom-shiitake.jpg";
 import melena from "@/assets/mushroom-melena-leon.jpg";
-import maitake from "@/assets/mushroom-maitake.jpg";
-import chaga from "@/assets/mushroom-chaga.jpg";
+import astaxantina from "@/assets/ingrediente-astaxantina.jpg";
+import colageno from "@/assets/ingrediente-colageno.jpg";
 import { MapPin } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
-const imgs = [colaPavo, reishi, shiitake, melena, maitake, chaga];
+const imgs = [reishi, shiitake, melena, colaPavo, astaxantina, colageno];
 const latins = [
-  "Trametes versicolor",
   "Ganoderma lucidum",
   "Lentinula edodes",
   "Hericium erinaceus",
-  "Grifola frondosa",
-  "Inonotus obliquus",
+  "Trametes versicolor",
+  "Haematococcus pluvialis",
+  "Peptidos de colageno marino",
 ];
 
 export function Mushrooms() {

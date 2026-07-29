@@ -1,16 +1,32 @@
-import { Leaf } from "lucide-react";
+import star from "@/assets/logo-nour-star.png";
 
-export function Logo({ className = "" }: { className?: string }) {
+export function Logo({
+  className = "",
+  variant = "dark",
+}: {
+  className?: string;
+  variant?: "dark" | "light";
+}) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <span
-        className="grid place-items-center w-9 h-9 rounded-full bg-gradient-leaf shadow-soft"
-        aria-hidden
-      >
-        <Leaf className="w-5 h-5 text-cream" strokeWidth={2.2} />
-      </span>
-      <span className="font-display text-2xl tracking-tight">
-        Vita<span className="text-gold">Pet</span>
+    <div className={`flex items-center gap-3 ${className}`}>
+      <img
+        src={star}
+        alt="Nour"
+        width={705}
+        height={563}
+        className="w-8 h-8 object-contain"
+      />
+      <span className="leading-none">
+        <span
+          className={`block font-display text-xl font-bold tracking-[0.34em] ${
+            variant === "dark" ? "text-cream" : "text-forest"
+          }`}
+        >
+          NOUR
+        </span>
+        <span className="block font-alt text-[0.58rem] tracking-[0.32em] text-gold mt-1">
+          VITAPET
+        </span>
       </span>
     </div>
   );

@@ -23,6 +23,9 @@ export function Hero() {
         style={{ background: "var(--gradient-hero-overlay)" }}
         aria-hidden
       />
+      <div className="absolute inset-0 mycelium opacity-40 pointer-events-none" aria-hidden />
+      <div className="absolute inset-0 gold-particles opacity-70 pointer-events-none" aria-hidden />
+
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-cream pt-24 pb-16">
         <span className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-forest/40 backdrop-blur px-4 py-1.5 text-xs uppercase tracking-[0.18em] text-gold">
           <Sparkles className="w-3.5 h-3.5" /> {t.hero.eyebrow}
